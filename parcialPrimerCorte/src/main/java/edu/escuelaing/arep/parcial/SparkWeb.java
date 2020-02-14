@@ -1,4 +1,5 @@
 package edu.escuelaing.arep.parcial;
+import java.util.ArrayList;
 import java.util.List;
 import spark.Request;
 import spark.Response;
@@ -42,8 +43,35 @@ public class SparkWeb {
         return pageContent;
     }
     private static String CalcularPage(Request req, Response res) {
-    	String pageContent= null;
-    	return pageContent;
+    	 ArrayList lin = new ArrayList();
+         String numeros = req.queryParams("Ingrese datos separados por espacios");
+         String[] num = numeros.split("\\s*( )\\s*");
+         int longitud;
+         for(String n:num){
+             lin.add(Double.parseDouble(n));
+
+     
+         }
+         double suma = sumatoria.Sumatoria(lin);
+         
+
+         
+         
+          String pageContent
+                 = "<!DOCTYPE html>"
+                 + "<html>\n"
+                 +"<head>\n" +
+                     "<title> ResultadoDesviacionYMedia</title>"
+                 +"</head>\n"
+                 + "<body>\n"
+                 + "<h2>ResultadoDesviacionYMedia</h2>\n"
+                 + "<p> Los resultados para la desviacion estandar y la media son</p>\n"
+                 + "<p>El resultado de la desviacion es:"+suma+"</p>\n"
+                 + "<p>El resultado de la desviacion es:"+"</p>\n"                
+                     
+                 + "</body>\n"
+                 + "</html>\n";
+         return pageContent;
     }
     
     static int getPort() {
