@@ -27,10 +27,10 @@ public class SparkWeb {
                 = "<!DOCTYPE html>"
                 + "<html>\n"
                 +"<head>\n" +
-                    "<title> EstadisticasDesviacionYMedia</title>"
+                    "<title> OrdenamientoMergeSort</title>"
                 +"</head>\n"
                 + "<body>\n"
-                + "<h2>EstadisticasDesviacionYMedia</h2>\n"
+                + "<h2>OrdenamientoMergeSort</h2>\n"
                 + "<form action=\"/calcular\">\n"
                 + "  Ingrese datos separados por un espacio:<br>\n"
                 + "  <input type=\"text\" name=\"Ingrese datos separados por espacios\">\n"
