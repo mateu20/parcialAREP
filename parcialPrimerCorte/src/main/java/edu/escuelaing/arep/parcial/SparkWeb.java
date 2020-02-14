@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 import spark.Request;
 import spark.Response;
+import org.json.*;
+
 import static spark.Spark.*;
 /**
  *
@@ -42,37 +44,27 @@ public class SparkWeb {
                 + "</html>\n";
         return pageContent;
     }
-    private static String CalcularPage(Request req, Response res) {
-    	 ArrayList lin = new ArrayList();
+    private static JSONObject CalcularPage(Request req, Response res) {
+    	 List lin = new ArrayList<>();
          String numeros = req.queryParams("Ingrese datos separados por espacios");
          String[] num = numeros.split("\\s*( )\\s*");
-         int longitud;
+         int longitud = 0;
          for(String n:num){
-             lin.add(Double.parseDouble(n));
-
-     
+             lin.add(Integer.parseInt(n));  
+             longitud=longitud +1;
          }
-         double suma = sumatoria.Sumatoria(lin);
+         Integer suma = sumatoria.Sumatoria(lin);
+         //List<Integer> sort = mergeSort.merge(lin,0,longitud-1);
          
-
+        res.header("Content-Type","application/json"); 
+          
+         JSONObject json = new JSONObject();
+        json.put("sumatoria", suma);
          
-         
-          String pageContent
-                 = "<!DOCTYPE html>"
-                 + "<html>\n"
-                 +"<head>\n" +
-                     "<title> ResultadoSumaYMErgeSort</title>"
-                 +"</head>\n"
-                 + "<body>\n"
-                 + "<h2>ResultadoSumaYMErgeSort</h2>\n"
-                 + "<p> Los resultados para la desviacion estandar y la media son</p>\n"
-                 + "<p>El resultado de la suma es:"+suma+"</p>\n"
-                 + "<p>El arreglo ordenado es:"+"</p>\n"                
-                     
-                 + "</body>\n"
-                 + "</html>\n";
-         return pageContent;
+         return json;
     }
+    
+    
     
     static int getPort() {
         if (System.getenv("PORT") != null) {

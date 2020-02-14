@@ -3,16 +3,11 @@ package edu.escuelaing.arep.parcial;
 import java.util.List;
 
 public class sumatoria {
-		/**
-	         * 
-	         * @param num Recibe una lista de Double
-	         * @return la sumatoria del arreglo dividido por la cantidad de elementos
-	         * del mismo
-	         */
-		 public static double Sumatoria(List<Double> num){
+
+		 public static Integer Sumatoria(List<Integer> num){
 		        int respuesta = num.size();
-		        double sum = 0;
-		        for (Double numb : num){
+		        Integer sum = 0;
+		        for (Integer numb : num){
 		            sum += numb;
 		        }
 		        return sum;
