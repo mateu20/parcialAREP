@@ -61,13 +61,13 @@ public class SparkWeb {
                  = "<!DOCTYPE html>"
                  + "<html>\n"
                  +"<head>\n" +
-                     "<title> ResultadoDesviacionYMedia</title>"
+                     "<title> ResultadoSumaYMErgeSort</title>"
                  +"</head>\n"
                  + "<body>\n"
-                 + "<h2>ResultadoDesviacionYMedia</h2>\n"
+                 + "<h2>ResultadoSumaYMErgeSort</h2>\n"
                  + "<p> Los resultados para la desviacion estandar y la media son</p>\n"
-                 + "<p>El resultado de la desviacion es:"+suma+"</p>\n"
-                 + "<p>El resultado de la desviacion es:"+"</p>\n"                
+                 + "<p>El resultado de la suma es:"+suma+"</p>\n"
+                 + "<p>El arreglo ordenado es:"+"</p>\n"                
                      
                  + "</body>\n"
                  + "</html>\n";
